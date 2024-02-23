@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title><%= locals.title ?? '' %></title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/script.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Seinustu leikir</h1>
+  </header>
+
+  <main>
+    <div class="games">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Dagsetning</th>
+            <th>Heimalið</th>
+            <th>Heimalið skor</th>
+            <th>Útilið</th>
+            <th>Útilið skor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (const game of locals.games) { %>
+            <tr>
+              <td><%= game.date %></td>
+              <td><%= game.home.name %></td>
+              <td><%= game.home.score %></td>
+              <td><%= game.away.name %></td>
+              <td><%= game.away.score %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>
+<%- include('footer') -%>

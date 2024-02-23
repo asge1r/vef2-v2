@@ -1,0 +1,42 @@
+<h1>Skrá nýjan leik</h1>
+
+<form method="post" action="/skra" class="game-form">
+  <div>
+    <label for="game_date">Dagsetning</label>
+    <input type="datetime-local" id="game_date" name="DATE" required>
+  </div>
+  <div>
+    <label for="home_name">Heimalið</label>
+    <select id="home_name" name="HOME_ID" required>
+      <% teams.forEach(function (team) { %>
+        <option value="<%= team.id %>"><%= team.name %></option>
+      <% }); %>
+    </select>
+  </div>
+  <div>
+    <label for="away_name">Útilið</label>
+    <select id="away_name" name="AWAY_ID" required>
+      <% teams.forEach(function (team) { %>
+        <option value="<%= team.id %>"><%= team.name %></option>
+      <% }); %>
+    </select>
+  </div>
+  <div>
+    <label for="home_score">Heima skor</label>
+    <input type="number" id="home_score" name="HOME_SCORE" required>
+  </div>
+  <div>
+    <label for="away_score">Úti skor</label>
+    <input type="number" id="away_score" name="AWAY_SCORE" required>
+  </div>
+  <button type="submit">Skrá</button>
+</form>
+
+<% if (locals.error) { %>
+  <div class="alert alert-danger" role="alert">
+    <%= locals.error %>
+  </div>
+<% } %>
+
+<a href="/admin">Til baka</a>
+<%- include('footer') -%>

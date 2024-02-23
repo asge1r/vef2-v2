@@ -1,0 +1,44 @@
+:root {
+  --font-base-size: 16px;
+  --font-base-family: Helvetica, Arial, sans-serif;
+  --max-width: 56rem;
+  --spacing: 1rem;
+  --color-border: #ddd;
+}
+
+html {
+  box-sizing: border-box;
+}
+/* styles.css */
+
+.table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.table thead {
+  background-color: #a8b5fb;
+}
+
+.table thead tr {
+  display: flex;
+  background-color: #c7cef9;
+}
+
+.table th {
+  padding: 8px;
+  border: 1px solid #000000;
+  flex-basis: 20%;
+}
+
+.table td {
+  flex-wrap: wrap;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Optional: Hover effect */
+.table tbody tr:hover {
+  background-color: #f5f5f5;
+}

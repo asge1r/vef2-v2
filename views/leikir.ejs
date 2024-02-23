@@ -1,0 +1,34 @@
+<%- include('header') -%>
+
+<h1>Seinustu leikir</h1>
+<div class="games"></div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Dagsetning</th>
+            <th>Heimalið</th>
+            <th>Stig heimaliðs</th>
+            <th>Útilið</th>
+            <th>Stig útiliðs</th>
+          </tr>
+        </thead>
+      <% for (const game of locals.games) { %>
+        <tr>
+          <td><%= game.date %></td>
+          <td><%= game.home.name %></td>
+          <td><%= game.home.score %></td>
+          <td><%= game.away.name %></td>
+          <td><%= game.away.score %></td>
+        </tr>
+      <% } %>
+    </table>
+</div>
+<%- include('footer') -%>
+
+<!-- <script>
+  function formatDateTime(dateTimeString) {
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    const dateTime = new Date(dateTimeString);
+    return dateTime.toLocaleDateString('en-US', options) + ' ' + dateTime.toLocaleTimeString('en-US', options);
+  }
+</script> -->
