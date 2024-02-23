@@ -48,13 +48,7 @@ VALUES
   ('Hraðaliðið');
 
 INSERT INTO
-  games (
-    date.toLocaleTimeString('en-US')
-    , home
-    , away
-    , home_score
-    , away_score
-  )
+  games (date, home, away, home_score, away_score)
 values
   ('2024-02-13T15:20:53.955Z', 3, 10, 0, 3);
 INSERT INTO
@@ -275,17 +269,34 @@ INSERT INTO
 values
   ('2024-01-22T15:20:53.955Z', 9, 11, 3, 2);
 
+-- INSERT INTO
+--   users (username, password)
+-- values
+--   (
+--     'admin'
+--     , '$2a$11$pgj3.zySyFOvIQEpD7W6Aund1Tw.BFarXxgLJxLbrzIv/4Nteisii'
+--   );
+-- INSERT INTO
+--   users (username, password)
+-- values
+--   (
+--     'asgeir'
+--     , '$2a$11$pgj3.zySyFOvIQEpD7W6Aund1Tw.BFarXxgLJxLbrzIv/4Nteisii'
+--   );
 INSERT INTO
-  users (username, password)
-values
+  users (name, username, password, admin)
+VALUES
   (
-    'admin'
+    'Svana'
+    , 'admin'
     , '$2a$11$pgj3.zySyFOvIQEpD7W6Aund1Tw.BFarXxgLJxLbrzIv/4Nteisii'
+    , true
   );
 INSERT INTO
-  users (username, password)
-values
+  users (name, username, password)
+VALUES
   (
-    'asgeir'
+    'Daniel'
+    , 'daniel'
     , '$2a$11$pgj3.zySyFOvIQEpD7W6Aund1Tw.BFarXxgLJxLbrzIv/4Nteisii'
   );

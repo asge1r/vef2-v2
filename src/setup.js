@@ -21,6 +21,7 @@ async function main() {
   }
 
   const data = await readFile('./sql/insert.sql')
+
   const insert = await query(data.toString('utf-8'))
 
   if(insert){

@@ -82,14 +82,12 @@ async function skraRouteInsert(req, res) {
   return res.redirect('/admin');
 }
 
-// Define routes
 adminRouter.get('/login', indexRoute);
 adminRouter.get('/admin', ensureLoggedIn, adminRoute);
 adminRouter.get('/skra', ensureLoggedIn, skraRoute);
 adminRouter.post('/skra', skraRouteInsert);
 adminRouter.post('/logout', logoutRoute);
 
-// Login route with passport authentication
 adminRouter.post(
   '/login',
   passport.authenticate('local', {
